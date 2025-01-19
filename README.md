@@ -22,6 +22,7 @@ Objectives:
 3. Create a resource that helps both learners and professionals.
    
 Why Explore This Repository?
+
 This repository is more than just code\u2014it is a structured learning experience. Each topic is organized with practical examples, clear explanations, and problem-solving strategies. Whether you are preparing for coding interviews, participating in competitions, or building a solid foundation in DSA, this resource is designed to guide you through every step of the journey.
 
 Contribution:
