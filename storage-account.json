@@ -1,0 +1,46 @@
+// Creation of storage account from Azure resource manager template 
+
+// commands: az group create --name vscode --location 'Central US'
+// az deployment group create --resource-group vscode --template-file 01-storage-account.json
+// az group delete --name vscode
+// az storage account delete -n jayershstorage11 -g vscode
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "substier": {
+            "type": "string",
+            "metadata": {
+                "description": "description of tier"
+            },
+            "defaultValue" : "Premium",
+            "allowedValues":[
+                "Standard", 
+                "Premium"
+            ]
+
+        }
+    },
+    "functions": [],
+    "variables": {
+        "storagename": "jayeshstorage11"
+    },
+    "resources": [
+        {
+            "name": "[variables('storagename')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2023-05-01",
+            "tags": {
+                "displayName": "jayesh-storage11"
+            },
+            "location": "[resourceGroup().location]",
+            "kind": "StorageV2",
+            "sku": {
+                "name": "Premium_LRS",
+                "tier": "[parameters('substier')]"
+            }
+        }
+    ],
+    "outputs": {}
+}
